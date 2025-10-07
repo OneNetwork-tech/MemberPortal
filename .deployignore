@@ -1,9 +1,11 @@
-# Development files to exclude from deployment
-.git/
+# Development and CI/CD files to exclude from deployment
 .github/
+.vscode/
+scripts/
 .gitignore
-README.md
-.env.example
 .deployignore
+.env.example
+README.md
+setup-cpanel.sh
 *.md
 *.txt

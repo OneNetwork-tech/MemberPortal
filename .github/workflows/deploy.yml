@@ -37,9 +37,18 @@ jobs:
     - name: Deploy to cPanel via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
+        server: ftp.onenetwork.se
+        username: onenetwo
+        password: Anjina@1985
         local-dir: ./deployment/
         server-dir: /membership.onenetwork.se/
         dangerous-clean-slate: false
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/README.md
+      
+    - name: Deployment Success
+      run: |
+        echo "✅ Deployment completed successfully!"
+        echo "Your site should be available at: https://membership.onenetwork.se"
