@@ -398,3 +398,67 @@
         font-size: 1.5rem;
     }
 }
+
+/* Review Section Styles */
+.review-section {
+    background: var(--gray-50);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+}
+
+.review-section h4 {
+    color: var(--gray-700);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.review-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.review-item strong {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    font-weight: 600;
+}
+
+.review-item span {
+    color: var(--gray-800);
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .review-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .registration-progress {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .registration-progress::before {
+        display: none;
+    }
+    
+    .progress-step {
+        flex-direction: row;
+        gap: 1rem;
+    }
+    
+    .step-number {
+        margin-bottom: 0;
+    }
+}
