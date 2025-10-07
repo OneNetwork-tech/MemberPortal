@@ -1,0 +1,9 @@
+# Development files to exclude from deployment
+.git/
+.github/
+.gitignore
+README.md
+.env.example
+.deployignore
+*.md
+*.txt
