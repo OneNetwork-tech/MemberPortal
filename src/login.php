@@ -73,19 +73,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - <?php echo APP_NAME; ?></title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/auth.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="auth-container">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-users"></i>
+                <span><?php echo APP_NAME; ?></span>
+            </div>
+            <div class="nav-links">
+                <a href="index.php" class="nav-link">Home</a>
+                <a href="index.php#features" class="nav-link">Features</a>
+                <a href="index.php#about" class="nav-link">About</a>
+            </div>
+            <div class="nav-actions">
+                <a href="login.php" class="btn btn-outline">Login</a>
+                <a href="register.php" class="btn btn-primary">Register</a>
+            </div>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="auth-container" style="margin-top: 70px;">
         <div class="auth-card">
             <div class="auth-header">
-                <a href="index.php" class="back-home">
-                    <i class="fas fa-arrow-left"></i>
-                    Back to Home
-                </a>
                 <div class="auth-logo">
-                    <i class="fas fa-users"></i>
+                    <i class="fas fa-sign-in-alt"></i>
                     <h1>Welcome Back</h1>
                 </div>
                 <p>Sign in to your membership account</p>
@@ -178,6 +197,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 
+    <script src="assets/js/main.js"></script>
     <script src="assets/js/auth.js"></script>
 </body>
 </html>
