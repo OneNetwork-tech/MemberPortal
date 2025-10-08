@@ -78,27 +78,54 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-users"></i>
-                <span><?php echo APP_NAME; ?></span>
-            </div>
-            <div class="nav-links">
-                <a href="index.php" class="nav-link">Home</a>
-                <a href="index.php#features" class="nav-link">Features</a>
-                <a href="index.php#about" class="nav-link">About</a>
-            </div>
-            <div class="nav-actions">
-                <a href="login.php" class="btn btn-outline">Login</a>
-                <a href="register.php" class="btn btn-primary">Register</a>
-            </div>
-            <div class="nav-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <i class="fas fa-users"></i>
+            <span><?php echo t('app_name'); ?></span>
         </div>
-    </nav>
+        <div class="nav-links">
+            <a href="index.php" class="nav-link"><?php echo t('home'); ?></a>
+            <a href="index.php#features" class="nav-link"><?php echo t('features'); ?></a>
+            <a href="index.php#about" class="nav-link"><?php echo t('about'); ?></a>
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <a href="admin_dashboard.php" class="nav-link"><?php echo t('dashboard'); ?></a>
+                <?php if (hasPermission($_SESSION['user_role'], 'view_members')): ?>
+                    <a href="members_list.php" class="nav-link"><?php echo t('members'); ?></a>
+                <?php endif; ?>
+            <?php endif; ?>
+        </div>
+        <div class="nav-actions">
+            <?php if (!isset($_SESSION['user_id'])): ?>
+                <a href="login.php" class="btn btn-outline"><?php echo t('login'); ?></a>
+                <a href="register.php" class="btn btn-primary"><?php echo t('register'); ?></a>
+            <?php else: ?>
+                <div class="user-menu">
+                    <span class="user-greeting"><?php echo t('welcome'); ?>, <?php echo $_SESSION['user_name']; ?></span>
+                    <div class="user-dropdown">
+                        <div class="user-info">
+                            <strong><?php echo $_SESSION['user_name']; ?></strong>
+                            <span><?php echo t($_SESSION['user_role']); ?></span>
+                        </div>
+                        <a href="profile.php" class="dropdown-item">
+                            <i class="fas fa-user"></i> <?php echo t('profile'); ?>
+                        </a>
+                        <a href="logout.php" class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i> <?php echo t('logout'); ?>
+                        </a>
+                    </div>
+                </div>
+            <?php endif; ?>
+            
+            <!-- Language Switcher -->
+            <?php include 'includes/language_switcher.php'; ?>
+        </div>
+        <div class="nav-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</nav>
 
     <div class="auth-container" style="margin-top: 70px;">
         <div class="auth-card">

@@ -1,6 +1,9 @@
 <?php
-// config.php - Template for environment variables
+// config.php - Updated with language support
 session_start();
+
+// Include language configuration
+require_once 'config/language.php';
 
 // Database configuration from environment
 define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
@@ -9,7 +12,7 @@ define('DB_USER', getenv('DB_USER') ?: 'onenetwo_memberportal');
 define('DB_PASS', getenv('DB_PASS') ?: 'Anjina@1985');
 
 // App configuration
-define('APP_NAME', 'MEMBERPORTAL');
+define('APP_NAME', t('app_name'));
 define('BASE_URL', getenv('BASE_URL') ?: 'https://membership.onenetwork.se/');
 define('ENVIRONMENT', getenv('ENVIRONMENT') ?: 'production');
 
