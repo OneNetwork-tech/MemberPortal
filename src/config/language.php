@@ -133,6 +133,15 @@ $translations = [
         'email_exists' => 'E-postadressen finns redan registrerad',
         'personnummer_exists' => 'Personnumret finns redan registrerat',
         'required_fields' => 'Vänligen fyll i alla obligatoriska fält',
+
+        'welcome_message' => 'Gå med i vårt community och bli en del av Sveriges främsta medlemsnätverk. Registrera dig idag för att få tillgång till exklusiva förmåner och anslut till andra medlemmar.',
+'learn_more' => 'Läs mer',
+'first_name_placeholder' => 'Ange ditt förnamn',
+'last_name_placeholder' => 'Ange ditt efternamn',
+'email_placeholder' => 'din.epost@example.com',
+'password_placeholder' => 'Ange ditt lösenord',
+'login_subtitle' => 'Logga in på ditt medlemskonto',
+'personal_info_help' => 'Berätta om dig själv. Alla fält markerade med <span class="required">*</span> är obligatoriska.',
         
         // Success
         'success' => 'Lyckades',
@@ -185,6 +194,14 @@ $translations = [
         'has_account' => 'Already have an account?',
         'create_account' => 'Create account',
         'sign_in' => 'Sign in',
+        'welcome_message' => 'Join our community and become part of Sweden\'s premier membership network. Register today to access exclusive benefits and connect with fellow members.',
+'learn_more' => 'Learn more',
+'first_name_placeholder' => 'Enter your first name',
+'last_name_placeholder' => 'Enter your last name',
+'email_placeholder' => 'your.email@example.com',
+'password_placeholder' => 'Enter your password',
+'login_subtitle' => 'Sign in to your membership account',
+'personal_info_help' => 'Tell us about yourself. All fields marked with <span class="required">*</span> are required.',
         
         // Registration
         'personal_info' => 'Personal Information',
